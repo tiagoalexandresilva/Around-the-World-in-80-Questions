@@ -1,0 +1,414 @@
+﻿
+@{
+    ViewBag.Title = "Pergunta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var perguntas = [];
+        var opt1 = [];
+        var opt2 = [];
+        var opt3 = [];
+        var total = 0;
+        var respCertas = 0;
+
+        function shuffle(array)
+        {
+            var currentIndex = array.length,
+               temporaryValue,
+               randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+
+        $.when(
+            $.ajax({
+                url: "/Main/devolvePerguntas",
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        perguntas.push(data[i]);
+                    }
+                }
+            })
+        ).then(function () {
+            shuffle(perguntas)
+            //pergunta1
+            opt1[0] = perguntas[0].resposta
+            opt1[1] = perguntas[0].opcao1
+            opt1[2] = perguntas[0].opcao2
+            opt1[3] = perguntas[0].opcao3
+            shuffle(opt1);
+            //pergunta2
+            opt2[0] = perguntas[1].resposta
+            opt2[1] = perguntas[1].opcao1
+            opt2[2] = perguntas[1].opcao2
+            opt2[3] = perguntas[1].opcao3
+            shuffle(opt2);
+            //pergunta3
+            opt3[0] = perguntas[2].resposta
+            opt3[1] = perguntas[2].opcao1
+            opt3[2] = perguntas[2].opcao2
+            opt3[3] = perguntas[2].opcao3
+            shuffle(opt3);
+        });
+
+        function verificaResultado1(res, botao)
+        {
+            var wrongAudio = $("#wrongSound")[0];
+            var correctAudio = $("#correctSound")[0];
+
+            //depois de escolhida opção, desabilitar os outros botoes de clicar e animaçoes
+            document.getElementById('botao0').disabled = true;
+            document.getElementById('botao1').disabled = true;
+            document.getElementById('botao2').disabled = true;
+            document.getElementById('botao3').disabled = true;
+
+            if (res == perguntas[0].resposta)
+            {
+                correctAudio.play();
+ 
+                //resposta correcta a verde
+                document.getElementById(botao).style.backgroundColor = "#82BF56";
+                document.getElementById(botao).style.borderBottom = "5px solid #669644";
+                document.getElementById(botao).style.textShadow = "0px -2px #669644";
+
+                respCertas++;
+
+                switch (perguntas[0].dificuldade) {
+                    case 1:
+                        total += 1;
+                        break;
+                    case 2:
+                        total += 2;
+                        break;
+                    case 3:
+                        total += 3;
+                        break;
+                }
+            }
+            else
+            {
+                wrongAudio.play();
+                //resposta errada a vermelho
+                document.getElementById(botao).style.backgroundColor = "#E74C3C";
+                document.getElementById(botao).style.borderBottom = "5px solid #BD3E31";
+                document.getElementById(botao).style.textShadow = "0px -2px #BD3E31";
+
+                //depois mostrar a resposta certa a verde
+                for (var j = 0; j < 4; j++) {
+                    if (opt1[j] == perguntas[0].resposta) {
+                        break;
+                    }
+                }
+
+                switch (j) {
+                    case 0:
+                        document.getElementById('botao0').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao0').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao0').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 1:
+                        document.getElementById('botao1').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao1').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao1').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 2:
+                        document.getElementById('botao2').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao2').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao2').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 3:
+                        document.getElementById('botao3').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao3').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao3').style.textShadow = "0px -2px #669644";
+                        break;
+
+                }
+            }
+            document.getElementById('botao4').style.visibility = 'visible';
+        }
+
+        function proxPergunta1() {
+            $('#pergunta1').slideUp();
+            document.getElementById('pergunta2').style.visibility = 'visible';
+        }
+
+
+        function verificaResultado2(res, botao) {
+            var wrongAudio = $("#wrongSound")[0];
+            var correctAudio = $("#correctSound")[0];
+
+            //depois de escolhida opção, desabilitar os outros botoes de clicar e animaçoes
+            document.getElementById('botao5').disabled = true;
+            document.getElementById('botao6').disabled = true;
+            document.getElementById('botao7').disabled = true;
+            document.getElementById('botao8').disabled = true;
+
+            if (res == perguntas[1].resposta) {
+                correctAudio.play();
+                //resposta correcta a verde
+                document.getElementById(botao).style.backgroundColor = "#82BF56";
+                document.getElementById(botao).style.borderBottom = "5px solid #669644";
+                document.getElementById(botao).style.textShadow = "0px -2px #669644";
+
+                respCertas++;
+
+                switch (perguntas[1].dificuldade) {
+                    case 1:
+                        total += 1;
+                        break;
+                    case 2:
+                        total += 2;
+                        break;
+                    case 3:
+                        total += 3;
+                        break;
+                }
+
+            }
+            else {
+                wrongAudio.play();
+                //resposta errada a vermelho
+                document.getElementById(botao).style.backgroundColor = "#E74C3C";
+                document.getElementById(botao).style.borderBottom = "5px solid #BD3E31";
+                document.getElementById(botao).style.textShadow = "0px -2px #BD3E31";
+
+                //depois mostrar a resposta certa a verde
+                for (var j = 0; j < 4; j++) {
+                    if (opt2[j] == perguntas[1].resposta) {
+                        break;
+                    }
+                }
+
+                switch (j) {
+                    case 0:
+                        document.getElementById('botao5').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao5').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao5').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 1:
+                        document.getElementById('botao6').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao6').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao6').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 2:
+                        document.getElementById('botao7').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao7').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao7').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 3:
+                        document.getElementById('botao8').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao8').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao8').style.textShadow = "0px -2px #669644";
+                        break;
+
+                }
+            }
+            document.getElementById('botao9').style.visibility = 'visible';
+        }
+
+        function proxPergunta2() {
+            $('#pergunta2').slideUp();
+            document.getElementById('pergunta3').style.visibility = 'visible';
+        }
+
+        function verificaResultado3(res, botao) {
+            var wrongAudio = $("#wrongSound")[0];
+            var correctAudio = $("#correctSound")[0];
+
+            //depois de escolhida opção, desabilitar os outros botoes de clicar e animaçoes
+            document.getElementById('botao10').disabled = true;
+            document.getElementById('botao11').disabled = true;
+            document.getElementById('botao12').disabled = true;
+            document.getElementById('botao13').disabled = true;
+
+            if (res == perguntas[2].resposta)
+            {
+                correctAudio.play();
+                //resposta correcta a verde
+                document.getElementById(botao).style.backgroundColor = "#82BF56";
+                document.getElementById(botao).style.borderBottom = "5px solid #669644";
+                document.getElementById(botao).style.textShadow = "0px -2px #669644";
+
+                respCertas++;
+
+                switch (perguntas[2].dificuldade) {
+                    case 1:
+                        total += 1;
+                        break;
+                    case 2:
+                        total += 2;
+                        break;
+                    case 3:
+                        total += 3;
+                        break;
+                }
+
+            }
+            else
+            {
+                wrongAudio.play();
+                //resposta errada a vermelho
+                document.getElementById(botao).style.backgroundColor = "#E74C3C";
+                document.getElementById(botao).style.borderBottom = "5px solid #BD3E31";
+                document.getElementById(botao).style.textShadow = "0px -2px #BD3E31";
+
+                //depois mostrar a resposta certa a verde
+                for (var j = 0; j < 4; j++) {
+                    if (opt3[j] == perguntas[2].resposta) {
+                        break;
+                    }
+                }
+
+                switch (j) {
+                    case 0:
+                        document.getElementById('botao10').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao10').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao10').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 1:
+                        document.getElementById('botao11').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao11').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao11').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 2:
+                        document.getElementById('botao12').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao12').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao12').style.textShadow = "0px -2px #669644";
+                        break;
+                    case 3:
+                        document.getElementById('botao13').style.backgroundColor = "#82BF56";
+                        document.getElementById('botao13').style.borderBottom = "5px solid #669644";
+                        document.getElementById('botao13').style.textShadow = "0px -2px #669644";
+                        break;
+
+                }
+            }
+
+            document.getElementById('botao14').style.visibility = 'visible';
+        }
+
+        function voltarMapa() {
+            $.ajax({
+                url: "/Main/actualizaJogo",
+                data: { pontos: total, certas: respCertas  },
+                success: function (data) {
+                    window.location.href = '/Main/Mapa';
+                }
+            })
+        }
+
+    </script>
+    
+    
+    
+    <audio id="wrongSound" preload="auto">
+        <source src="~/sounds/Doh.mp3" />
+    </audio>
+    <audio id="correctSound" preload="auto">
+        <source src="~/sounds/Ding.mp3" />
+    </audio>
+
+
+    <div id="pergunta1" style="overflow-y:hidden">
+        <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; padding-top: 20px; padding-bottom: 20px;"><script type="text/javascript">document.write(JSON.stringify(perguntas[0].pergunta).replace(/\"/g, ""));</script></h2>
+        <hr />
+    
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 100px; margin-left: -50px; text-align: center;">
+            <a href="#" style="outline:none;" id="botao0" class="action-button shadow animate blue" onclick="verificaResultado1(opt1[0], 'botao0');">
+                <script type="text/javascript">document.write(JSON.stringify(opt1[0]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao1" class="action-button shadow animate blue" onclick="verificaResultado1(opt1[1], 'botao1');">
+                <script type="text/javascript">document.write(JSON.stringify(opt1[1]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 200px; margin-left: -50px; text-align: center; ">
+            <a href="#" style="outline: none;" id="botao2" class="action-button shadow animate blue" onclick="verificaResultado1(opt1[2], 'botao2');">
+                <script type="text/javascript">document.write(JSON.stringify(opt1[2]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao3" class="action-button shadow animate blue" onclick="verificaResultado1(opt1[3], 'botao3');">
+                <script type="text/javascript">document.write(JSON.stringify(opt1[3]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 39.5%; margin-top: 340px; margin-left: -50px; text-align: center; ">
+            <a href="#" id="botao4" style="visibility: hidden; outline: none;" class="action-button shadow animate yellow" onclick="proxPergunta1()">
+                Próxima pergunta
+            </a>
+        </div>
+    </div>
+    
+    <div id="pergunta2" style="visibility: hidden; overflow-y: hidden">
+        <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; padding-top: 20px; padding-bottom: 20px;"><script type="text/javascript">document.write(JSON.stringify(perguntas[1].pergunta).replace(/\"/g, ""));</script></h2>
+        <hr />
+    
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 100px; margin-left: -50px; text-align: center;">
+            <a href="#" style="outline:none;" id="botao5" class="action-button shadow animate blue" onclick="verificaResultado2(opt2[0], 'botao5');">
+                <script type="text/javascript">document.write(JSON.stringify(opt2[0]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao6" class="action-button shadow animate blue" onclick="verificaResultado2(opt2[1], 'botao6');">
+                <script type="text/javascript">document.write(JSON.stringify(opt2[1]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 200px; margin-left: -50px; text-align: center; ">
+            <a href="#" style="outline: none;" id="botao7" class="action-button shadow animate blue" onclick="verificaResultado2(opt2[2], 'botao7');">
+                <script type="text/javascript">document.write(JSON.stringify(opt2[2]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao8" class="action-button shadow animate blue" onclick="verificaResultado2(opt2[3], 'botao8');">
+                <script type="text/javascript">document.write(JSON.stringify(opt2[3]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 39.5%; margin-top: 340px; margin-left: -50px; text-align: center; ">
+            <a href="#" id="botao9" style="visibility: hidden; outline: none;" class="action-button shadow animate yellow" onclick="proxPergunta2()">
+                Próxima pergunta
+            </a>
+        </div>
+    </div>
+    
+    <div id="pergunta3" style="visibility: hidden; overflow-y: hidden;">
+        <h2 style="text-align: center; font-family: 'Montserrat', sans-serif; padding-top: 20px; padding-bottom: 20px;"><script type="text/javascript">document.write(JSON.stringify(perguntas[2].pergunta).replace(/\"/g, ""));</script></h2>
+        <hr />
+    
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 100px; margin-left: -50px; text-align: center;">
+            <a href="#" style="outline:none;" id="botao10" class="action-button shadow animate blue" onclick="verificaResultado3(opt3[0], 'botao10');">
+                <script type="text/javascript">document.write(JSON.stringify(opt3[0]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao11" class="action-button shadow animate blue" onclick="verificaResultado3(opt3[1], 'botao11');">
+                <script type="text/javascript">document.write(JSON.stringify(opt3[1]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 24%; margin-top: 200px; margin-left: -50px; text-align: center; ">
+            <a href="#" style="outline: none;" id="botao12" class="action-button shadow animate blue" onclick="verificaResultado3(opt3[2], 'botao12');">
+                <script type="text/javascript">document.write(JSON.stringify(opt3[2]).replace(/\"/g, ""));</script>
+            </a>
+            <a href="#" style="outline:none;" id="botao13" class="action-button shadow animate blue" onclick="verificaResultado3(opt3[3], 'botao13');">
+                <script type="text/javascript">document.write(JSON.stringify(opt3[3]).replace(/\"/g, ""));</script>
+            </a>
+        </div>
+        <div style="width: 100%; position: absolute; left: 39.5%; margin-top: 340px; margin-left: -50px; text-align: center; ">
+            <a href="#" id="botao14" style="visibility: hidden; outline: none;" class="action-button shadow animate yellow" onclick="voltarMapa()">
+                Voltar ao Mapa
+            </a>
+        </div>
+    </div>
+}
+
+

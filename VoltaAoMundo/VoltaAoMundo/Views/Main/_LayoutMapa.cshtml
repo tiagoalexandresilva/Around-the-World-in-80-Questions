@@ -1,0 +1,215 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Volta ao Mundo em 80 Questões</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="~/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="~/images/favicon-196.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="~/images/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/images/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="~/images/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/images/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/images/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/images/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/images/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/images/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/images/favicon-72.png">
+    <link rel="apple-touch-icon" href="~/images/favicon-57.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="~/images/favicon-144.png">
+    <meta name="msapplication-config" content="~/images/browserconfig.xml">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style type="text/css">
+        .modal-footer {
+            border-top: 0px;
+        }
+
+        .popupDialog {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 99999;
+            opacity: 0;
+            -webkit-transition: opacity 400ms ease-in;
+            -moz-transition: opacity 400ms ease-in;
+            transition: opacity 400ms ease-in;
+            pointer-events: none;
+        }
+
+        .popupDialog:target {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        html {
+            height: 100%;
+            overflow-y:hidden;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #map-canvas {
+            height: 100%;
+        }
+
+        #info {
+            background: none repeat scroll 0 0 #F8F8F8;
+            border: 5px solid #DFDFDF;
+            color: #717171;
+            font-size: 13px;
+            height: 70px;
+            letter-spacing: 1px;
+            line-height: 30px;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            top: -100px;
+            left: -40px;
+            display: none;
+            padding: 0 20px;
+        }
+
+        #info:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 5px solid #dfdfdf;
+            border-right: 5px solid #dfdfdf;
+            background: #f8f8f8;
+            left: 50%;
+            margin-left: -5px;
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #infotext {
+            margin: 100px;
+            float: left;
+            position: relative;
+            cursor: pointer;
+        }
+
+        #infotext:hover #info {
+            display: block;
+        }
+    </style>
+
+    @RenderBody()
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script type="text/javascript">
+        var jogo;
+        var perc;
+        function infoJogo(){
+            $.when(
+                $.ajax({
+                    url: "/Main/devolveJogo",
+                    dataType: 'json',
+                    async: false,
+                    success: function (data) {
+                        jogo = data;
+                    }
+                })
+            ).then(function () {
+                if (jogo.respostasDadas == 0) {
+                    perc = 0;
+                }
+                else {
+                    perc = jogo.respostasAcertadas / jogo.respostasDadas * 100;
+                }
+                document.write('<span id="info">Pontos: ' + jogo.numPontos +
+                    '<br>Dificuldade actual: ' + jogo.dificuldade +
+                    '</span>');
+            });
+         }
+    </script>
+
+</head>
+
+<body style="padding-bottom:0px">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img style="float:right;" src="~/images/webglobe.jpg">
+                <p class="navbar-brand" style="color:white;margin-bottom:0;font-family: 'Lobster', serif;font-size:25px;">Volta ao Mundo em 80 Questões</p>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#openPopup">Acerca</a></li>
+                </ul>
+                <div id="openPopup" class="popupDialog">
+                    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="position: relative; margin: 10% auto;">
+                                <div class="modal-header">
+                                    <a href="#close" title="Close" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                                    <h1 class="text-center" style="font-family: 'Montserrat', sans-serif;">Acerca</h1>
+                                </div>
+                                <div class="modal-body" style="border-radius: 0 0 4px 4px; background-color: #F5FAFF; height: auto; text-align: left; ">
+                                    <form class="form col-md-12 center-block">
+                                        <p>
+
+                                            Esta aplicação surgiu como resposta ao desafio proposto na disciplina de Laboratórios de Informática IV, da Licenciatura
+                                            em Engenharia Informática na Universidade do Minho. O objectivo da aplicação é, através de pequenos obstáculos na forma de
+                                            questões, criar um ambiente desafiante ao utilizador.
+                                        <p>
+                                            <b>Como jogar:</b> <br>Ao iniciar um jogo deve escolher uma região do mapa onde começar, uma dificuldade inicial e o tema das perguntas.
+                                            A dificuldade é variavél ao longo do tempo, dependendo assim, da percentagem de respostas correctas.
+                                        <p>
+                                            Para avançar, deve responder a três questões sobre a região que escolheu no mapa. Depois de respondido, são abertas as fronteiras da região anteriormente respondida.
+                                        <p>
+                                            São atribuídos pontos por cada pergunta acertada. A quantidade de pontos atribuída a cada pergunta é igual à dificuldade da mesma.
+                                        <p>O jogo termina quando der uma volta completa ao mapa, isto é quando chegar ao alinhamento (vertical) da região inicial.</p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div id="map-canvas"></div>
+    <div style="position: absolute; top: 80%; left: 10%;">
+        <p id="infotext" style="font-family: 'Montserrat', sans-serif;">
+        <b style="color: white; text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000; ">
+            Informação de Jogo</b>
+            <script type="text/javascript">infoJogo();</script>
+        </p>
+
+    </div>
+    
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

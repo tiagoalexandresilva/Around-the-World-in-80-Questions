@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal" role="form">
+        <h2 style="padding-left: 50px; color: #ff0000; font-family: 'Montserrat', sans-serif;">Administração.</h2>
+        <h4 style="padding-left: 50px; font-family: 'Montserrat', sans-serif;">Seleccione uma das opções de Administração.</h4>
+        <hr />
+        <div class="form-group">
+            <div style ="font-family: 'Montserrat', sans-serif; width: 600px; margin-left: auto; margin-right: auto; padding-top: 25px;">
+                @Html.ActionLink("Adicionar nova pergunta", "NovaPergunta", "Admin", new { @class = "btn btn-primary btn-lg btn-block", @style = "outline:none" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-family: 'Montserrat', sans-serif; width: 600px; margin-left: auto; margin-right: auto; padding-top: 25px;">
+                @Html.ActionLink("Editar perguntas", "EditarPerguntas", "Admin", new { @class = "btn btn-primary btn-lg btn-block", @style = "outline:none" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-family: 'Montserrat', sans-serif; width: 600px; margin-left: auto; margin-right: auto; padding-top: 25px;">
+                @Html.ActionLink("Remover perguntas", "RemoverPerguntas", "Admin", new { @class = "btn btn-primary btn-lg btn-block", @style = "outline:none" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-family: 'Montserrat', sans-serif; width: 600px; margin-left: auto; margin-right: auto; padding-top: 25px;">
+                @Html.ActionLink("Adicionar novo tema", "NovoTema", "Admin", new { @class = "btn btn-primary btn-lg btn-block", @style = "outline:none" })
+            </div>
+        </div>
+     </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,69 @@
+﻿@model VoltaAoMundo.Models.Jogo
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal" role="form">
+        <h2 style="padding-left: 50px; color: #ff0000; font-family: 'Montserrat', sans-serif;">Bem-vindo!</h2>
+        <h4 style="padding-left: 50px; font-family: 'Montserrat', sans-serif;">Escolha as opções iniciais para iniciar o jogo.</h4>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(j => j.nomeTema, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <select id="nomeTema" name="nomeTema" class="form-control">
+                    @foreach (var item in ViewBag.LTemas)
+                    {
+                        <option>
+                            @item.nome
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(j => j.dificuldade, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <select id="dificuldade" name="dificuldade" class="form-control">
+                    <option>
+                        @Html.Raw("1")
+                    </option>
+                    <option>
+                        @Html.Raw("2")
+                    </option>
+                    <option>
+                        @Html.Raw("3")
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(j => j.regiaoAtual, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                <select id="regiaoAtual" name="regiaoAtual" class="form-control">
+                    @foreach (var item in ViewBag.Regioes)
+                    {
+                        <option value="@item.id">
+                            @item.nomeRegiao
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="outline:none;" type="submit" class="btn btn-default" value="Iniciar Jogo" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+

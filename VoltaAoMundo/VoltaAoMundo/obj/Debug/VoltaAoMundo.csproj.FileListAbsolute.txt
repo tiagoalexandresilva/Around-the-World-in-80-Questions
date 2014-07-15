@@ -1,0 +1,222 @@
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll.config
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.pdb
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Web.Infrastructure.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Owin.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\WebGrease.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.pdb
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.csprojResolveAssemblyReference.cache
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.dll
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.pdb
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll.config
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.pdb
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Owin.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\SimpleCrypto.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\WebGrease.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.pdb
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.csprojResolveAssemblyReference.cache
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.dll
+C:\Users\Tiago\Dropbox\LEI 3º ano\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.pdb
+G:\Tiago\Unidades Curriculares\li4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\SimpleCrypto.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.pdb
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Owin.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\SimpleCrypto.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\WebGrease.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.pdb
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.csprojResolveAssemblyReference.cache
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.dll
+C:\Users\Samuel\Dropbox\LEI\LI 4\Etapa 3\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.pdb
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\VoltaAoMundo.pdb
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Owin.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\SimpleCrypto.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\WebGrease.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\EntityFramework.SqlServer.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Helpers.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Mvc.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Optimization.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.Razor.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Newtonsoft.Json.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Antlr3.Runtime.pdb
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.csprojResolveAssemblyReference.cache
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.dll
+C:\Users\Samuel\Desktop\VoltaAoMundo\VoltaAoMundo\obj\Debug\VoltaAoMundo.pdb

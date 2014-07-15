@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VoltaAoMundoModelStoreContainer" CdmEntityContainer="VoltaAoMundoDBContext">
+    <EntitySetMapping Name="Alinhamento">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Alinhamento">
+        <MappingFragment StoreEntitySet="Alinhamento">
+          <ScalarProperty Name="idRegiao" ColumnName="idRegiao" />
+          <ScalarProperty Name="idRegAlin" ColumnName="idRegAlin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstatisticaPessoal">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.EstatisticaPessoal">
+        <MappingFragment StoreEntitySet="EstatisticaPessoal">
+          <ScalarProperty Name="idEstatistica" ColumnName="idEstatistica" />
+          <ScalarProperty Name="idUtilizador" ColumnName="idUtilizador" />
+          <ScalarProperty Name="numTotalJogos" ColumnName="numTotalJogos" />
+          <ScalarProperty Name="numTotalPontos" ColumnName="numTotalPontos" />
+          <ScalarProperty Name="recordPessoal" ColumnName="recordPessoal" />
+          <ScalarProperty Name="respostasDadas" ColumnName="respostasDadas" />
+          <ScalarProperty Name="respostasAcertadas" ColumnName="respostasAcertadas" />
+          <ScalarProperty Name="pontj1" ColumnName="pontj1" />
+          <ScalarProperty Name="pontj2" ColumnName="pontj2" />
+          <ScalarProperty Name="pontj3" ColumnName="pontj3" />
+          <ScalarProperty Name="pontj4" ColumnName="pontj4" />
+          <ScalarProperty Name="pontj5" ColumnName="pontj5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fronteira">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Fronteira">
+        <MappingFragment StoreEntitySet="Fronteira">
+          <ScalarProperty Name="idRegiao" ColumnName="idRegiao" />
+          <ScalarProperty Name="idFronteira" ColumnName="idFronteira" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jogo">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Jogo">
+        <MappingFragment StoreEntitySet="Jogo">
+          <ScalarProperty Name="idJogo" ColumnName="idJogo" />
+          <ScalarProperty Name="idUtilizador" ColumnName="idUtilizador" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="dificuldade" ColumnName="dificuldade" />
+          <ScalarProperty Name="ajuda1" ColumnName="ajuda1" />
+          <ScalarProperty Name="ajuda2" ColumnName="ajuda2" />
+          <ScalarProperty Name="ajuda3" ColumnName="ajuda3" />
+          <ScalarProperty Name="ajuda4" ColumnName="ajuda4" />
+          <ScalarProperty Name="pergAtual" ColumnName="pergAtual" />
+          <ScalarProperty Name="regAtual" ColumnName="regAtual" />
+          <ScalarProperty Name="respostasDadas" ColumnName="respostasDadas" />
+          <ScalarProperty Name="respostasAcertadas" ColumnName="respostasAcertadas" />
+          <ScalarProperty Name="numPontos" ColumnName="numPontos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pergunta">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Pergunta">
+        <MappingFragment StoreEntitySet="Pergunta">
+          <ScalarProperty Name="idPergunta" ColumnName="idPergunta" />
+          <ScalarProperty Name="idRegiao" ColumnName="idRegiao" />
+          <ScalarProperty Name="nTema" ColumnName="nTema" />
+          <ScalarProperty Name="pergunta1" ColumnName="pergunta" />
+          <ScalarProperty Name="resposta" ColumnName="resposta" />
+          <ScalarProperty Name="dificuldade" ColumnName="dificuldade" />
+          <ScalarProperty Name="opcao1" ColumnName="opcao1" />
+          <ScalarProperty Name="opcao2" ColumnName="opcao2" />
+          <ScalarProperty Name="opcao3" ColumnName="opcao3" />
+          <ScalarProperty Name="justificacao" ColumnName="justificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerguntaJogo">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.PerguntaJogo">
+        <MappingFragment StoreEntitySet="PerguntaJogo">
+          <ScalarProperty Name="idPergunta" ColumnName="idPergunta" />
+          <ScalarProperty Name="idJogo" ColumnName="idJogo" />
+          <ScalarProperty Name="ordem" ColumnName="ordem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regiao">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Regiao">
+        <MappingFragment StoreEntitySet="Regiao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomeRegiao" ColumnName="nomeRegiao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegiaoPercorrida">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.RegiaoPercorrida">
+        <MappingFragment StoreEntitySet="RegiaoPercorrida">
+          <ScalarProperty Name="idRegiao" ColumnName="idRegiao" />
+          <ScalarProperty Name="idJogo" ColumnName="idJogo" />
+          <ScalarProperty Name="ordem" ColumnName="ordem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tema">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Tema">
+        <MappingFragment StoreEntitySet="Tema">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="jogavel" ColumnName="jogavel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilizador">
+      <EntityTypeMapping TypeName="VoltaAoMundoModel.Utilizador">
+        <MappingFragment StoreEntitySet="Utilizador">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="dataRegisto" ColumnName="dataRegisto" />
+          <ScalarProperty Name="passwordSalt" ColumnName="passwordSalt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

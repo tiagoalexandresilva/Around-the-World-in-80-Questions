@@ -1,0 +1,72 @@
+﻿@model VoltaAoMundo.Models.Utilizador
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                interval: 3000
+            })
+        });
+    </script>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/images/Santorini.jpg" class="img-responsive">
+        </div>
+        <div class="item">
+            <img src="~/images/Singapore.jpg" class="img-responsive">
+        </div>
+        <div class="item">
+            <img src="~/images/isle.jpg" class="img-responsive">
+        </div>
+        <div class="item">
+            <img src="~/images/NewYork.jpg" class="img-responsive">
+        </div>
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="outline:none;">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="outline:none;">
+        <span class="icon-next"></span>
+    </a>
+</div>
+<!-- /.carousel -->
+<!-- START THE FEATURETTES -->
+<div class="featurette">
+    <div class="modal-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form col-md-12 center-block" style="width:300px;margin-left:auto;margin-right:auto;">
+                @Html.ValidationSummary(true, "Username ou password inválidos.")
+                <div class="form-group">
+                    @Html.TextBoxFor(u => u.username, new { @class = "form-control input-lg", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(u => u.username)
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(u => u.password, new { @class = "form-control input-lg", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(u => u.password)
+                </div>
+                <div class="form-group" style="font-family: 'Montserrat', sans-serif;">
+                    <input style="outline:none;" type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<!-- /END THE FEATURETTES -->

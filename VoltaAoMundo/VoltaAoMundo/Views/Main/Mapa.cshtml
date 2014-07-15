@@ -1,0 +1,280 @@
+@{
+    ViewBag.Title = "Mapa";
+    Layout = "~/Views/Main/_LayoutMapa.cshtml";
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBf7F_1Ir3QvLmtCufse7gfvoqvuUAAq8E&sensor=false"></script>
+
+<script type="text/javascript">
+
+    function initialize() {
+
+        var mapOptions = {
+            center: new
+            google.maps.LatLng(25, 0),
+            zoom: 2,
+            draggable: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true,
+            disableDefaultUI: true
+        };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var regioes = [];
+        var regioesPerc = [];
+        var fronteiras = [];
+        var alinhamento = [];
+        var jogo;
+        var markers = [];
+
+        $.when(
+
+            $.ajax({
+                url: "/Main/devolveRegioes",
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        regioes.push(data[i]);
+                    }
+                }
+            }),
+
+            $.ajax({
+                url: "/Main/devolveRegioesPerc",
+                dataType: 'json',
+                async: false,
+                success: function(data) {
+                    for (var i = 0; i < data.length; i++) {
+                        regioesPerc.push(data[i]);
+                    }
+                }
+            }),
+
+            $.ajax({
+                url: "/Main/devolveJogo",
+                dataType: 'json',
+                async: false,
+                success: function(data) {
+                    jogo = data;
+                }
+            }),
+
+            $.ajax({
+                url: "/Main/devolveFronteiras",
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        fronteiras.push(data[i]);
+                    }
+                }
+            }),
+
+            $.ajax({
+                url: "/Main/devolveAlinhamentos",
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        alinhamento.push(data[i]);
+                    }
+                }
+            })
+
+        ).then(function () {
+            var markerIndex = 0;
+
+            //se esta a comecar o jogo
+            if (regioesPerc.length == 0)
+            {
+                var reg, flag = 0;
+
+                for (var i = 0; flag == 0 && i < regioes.length; i++) {
+                    if (regioes[i].id == jogo.regiaoAtual) {
+                        reg = regioes[i];
+                        flag = 1;
+                    }
+                }
+
+                var coord = reg.latLng.split(",");
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(coord[0], coord[1]),
+                    map: map,
+                    title: reg.nomeRegiao,
+                    icon: reg.icon
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    var url = '@Url.Action("Pergunta", "Main", new { idregiao = "_id_" })'.replace('_id_', reg.id);
+                    window.location.href = url;
+                });
+            }
+            else
+            {
+                for (var i = 0; i < regioesPerc.length; i++)
+                {
+                    //Se a regiao percorrida for igual á actual temos de desenhar as fronteiras dele (quer dizer que ja respondeu as perguntas dessa regiao)
+                    if (regioesPerc[i].idRegiao == jogo.regiaoAtual) {
+                        var reg, flag = 0;
+
+                        //vai descobrir e buscar a informacao da regiao actual
+                        for (var j = 0; flag == 0 && j < regioes.length; j++) {
+                            if (regioes[j].id == regioesPerc[i].idRegiao) {
+                                reg = regioes[j];
+                                flag = 1;
+                            }
+                        }
+
+                        //meter o marcador a vermelho do actual
+                        var coord = reg.latLng.split(",");
+                        var marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(coord[0], coord[1]),
+                            map: map,
+                            title: reg.nomeRegiao,
+                            icon: reg.icon2
+                        });
+
+                        //começar a desenhar as fronteiras do actual
+                        for (var h = 0; h < fronteiras.length; h++)
+                        {
+                            flag = 0;
+                            var percorrida = 0;
+
+                            for (var j = 0; flag == 0 && j < regioes.length; j++)
+                            {
+                                if (regioes[j].id == fronteiras[h].idFronteira) {
+                                    reg = regioes[j];
+                                    flag = 1;
+                                }
+                            }
+
+                            //se uma fronteira já foi percorrida
+                            for (var z = 0; percorrida == 0 && z < regioesPerc.length; z++)
+                            {
+                                if (reg.id == regioesPerc[z].idRegiao) {
+                                    percorrida = 1;
+                                }
+                            }
+
+                            if (percorrida == 0)
+                            {
+                                var coord = reg.latLng.split(",");
+                                var marker = new google.maps.Marker({
+                                    position: new google.maps.LatLng(coord[0], coord[1]),
+                                    map: map,
+                                    title: reg.nomeRegiao,
+                                    icon: reg.icon,
+                                    infoIndex: markerIndex,
+                                    idRegiao: reg.id
+                                });
+
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    //verifica se ja pode utilizar o criterio de fim de jogo
+                                    if (jogo.fim == true)
+                                    {
+                                        var found = 0;
+
+                                        //verifica se a regiao selecionada esta no alinhamento da inicial
+                                        for (var l = 0; found == 0 && l < alinhamento.length; l++)
+                                        {
+                                            if (alinhamento[l].idRegiao == jogo.regiaoInicial && alinhamento[l].idRegAlin == markers[this.infoIndex].idRegiao)
+                                                found = 1;
+                                        }
+
+                                        if (found == 0)
+                                        {
+                                            var url = '@Url.Action("Pergunta", "Main", new { idregiao = "_id_" })'.replace('_id_', markers[this.infoIndex].idRegiao);
+                                            window.location.href = url;
+                                        }
+                                        else {
+                                            var url = '@Url.Action("PerguntaFinal", "Main", new { idregiao = "_id_" })'.replace('_id_', markers[this.infoIndex].idRegiao);
+                                            window.location.href = url;
+                                        }
+                                    }
+                                    else {
+                                        var url = '@Url.Action("Pergunta", "Main", new { idregiao = "_id_" })'.replace('_id_', markers[this.infoIndex].idRegiao);
+                                        window.location.href = url;
+                                    }
+                                });
+                                markers.push(marker);
+                                markerIndex++;
+                            }
+                            else {
+                                //Se uma fronteira ja foi percorrida testa-se se o jogo pode terminal nela
+                                    var coord = reg.latLng.split(",");
+                                    var marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(coord[0], coord[1]),
+                                        map: map,
+                                        title: reg.nomeRegiao,
+                                        icon: reg.icon2,
+                                        infoIndex: markerIndex,
+                                        idRegiao: reg.id
+                                    });
+
+                                    google.maps.event.addListener(marker, 'click', function () {
+                                        var found3 = 0;
+                                        if (jogo.fim == true) {
+
+                                            //verifica se a regiao selecionada esta no alinhamento da inicial
+                                            if (jogo.regiaoInicial == markers[this.infoIndex].idRegiao) {
+                                                found3 = 1;
+                                            }
+                                            for (var l = 0; found3 == 0 && l < alinhamento.length; l++) {
+                                                if (alinhamento[l].idRegiao == jogo.regiaoInicial && alinhamento[l].idRegAlin == markers[this.infoIndex].idRegiao)
+                                                    found3 = 1;
+                                            }
+
+                                            if (found3 == 1) {
+                                                var url = '@Url.Action("FinalizaJogo", "Main")';
+                                                window.location.href = url;
+                                            }
+                                        }
+                                    });
+
+                                    markers.push(marker);
+                                    markerIndex++;
+                            }
+                        }
+                    }
+                    else {
+                        //Se uma regiao não é a actual, já foi percorrida e não é fronteira da actual apenas mete o marcador vermelho
+                        var front = 0;
+                        for (var j = 0; j < regioes.length; j++)
+                        {
+                            if (regioes[j].id == regioesPerc[i].idRegiao)
+                            {
+                                //Verifica se a regiao nao faz parte das fronteiras da regiao actual
+                                for (var k = 0; front == 0 && k < fronteiras.length; k++) {
+                                    if (fronteiras[k].idRegiao == jogo.regiaoAtual && regioes[j].id == fronteiras[k].idFronteira) {
+                                        front = 1;
+                                    }
+                                }
+
+                                if (front == 0) {
+                                    var coord = regioes[j].latLng.split(",");
+                                    var marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(coord[0], coord[1]),
+                                        map: map,
+                                        title: regioes[j].nomeRegiao,
+                                        icon: regioes[j].icon2
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        });
+    }
+
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+

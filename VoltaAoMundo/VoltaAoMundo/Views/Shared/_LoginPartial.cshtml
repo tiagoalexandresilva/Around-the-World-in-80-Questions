@@ -1,0 +1,264 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    if(User.Identity.Name.Equals("admin"))
+    { 
+          <ul class="nav navbar-nav navbar-right">          
+            <li>@Html.ActionLink("Logout", "LogOut", "User")</li>
+          </ul>
+    }
+    else
+    {
+        <style>
+            .zebra td, .zebra th {
+                padding: 10px;
+                border-bottom: 1px solid #ebf3fc;    
+            }
+
+            .zebra tbody tr:nth-child(even) {
+                background: #F5FAFF;
+                -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+                -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+                box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+            }
+
+            .zebra th {
+                text-align: left;
+                text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+                border-bottom: 1px solid #ccc;
+                background-color: #eee;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
+                background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+                background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
+                background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
+                background-image:      -o-linear-gradient(top, #f5f5f5, #eee); 
+                background-image:         linear-gradient(top, #f5f5f5, #eee);
+            }
+
+            .zebra th:first-child {
+                -moz-border-radius: 6px 0 0 0;
+                -webkit-border-radius: 6px 0 0 0;
+                border-radius: 6px 0 0 0;  
+            }
+
+            .zebra th:last-child {
+                -moz-border-radius: 0 6px 0 0;
+                -webkit-border-radius: 0 6px 0 0;
+                border-radius: 0 6px 0 0;
+            }
+
+            .zebra th:only-child{
+                -moz-border-radius: 6px 6px 0 0;
+                -webkit-border-radius: 6px 6px 0 0;
+                border-radius: 6px 6px 0 0;
+            }
+
+            .zebra tfoot td {
+                border-bottom: 0;
+                border-top: 1px solid #fff;
+                background-color: #f1f1f1;  
+            }
+
+            .zebra tfoot td:first-child {
+                -moz-border-radius: 0 0 0 6px;
+                -webkit-border-radius: 0 0 0 6px;
+                border-radius: 0 0 0 6px;
+            }
+
+            .zebra tfoot td:last-child {
+                -moz-border-radius: 0 0 6px 0;
+                -webkit-border-radius: 0 0 6px 0;
+                border-radius: 0 0 6px 0;
+            }
+
+            .zebra tfoot td:only-child{
+                -moz-border-radius: 0 0 6px 6px;
+                -webkit-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+            }
+  
+        </style>
+        
+        <script type="text/javascript">
+            var record = [];
+            var totais = [];
+            var med;
+            var est;
+            var perc;
+
+            function estPessoal() {
+                $.when(
+                    $.ajax({
+                        url: "/Main/devolveEstPessoal",
+                        dataType: 'json',
+                        async: false,
+                        success: function (data) {
+                            est = data;
+                        }
+                    })
+                ).then(function () {
+                    if (est.numTotalJogos == 0) {
+                        med = 0;
+                    }
+                    else {
+                        med = est.numTotalPontos / est.numTotalJogos;
+                    }
+                    if (est.respostasDadas == 0) {
+                        perc = 0;
+                    }
+                    else {
+                        perc = est.respostasAcertadas / est.respostasDadas * 100;
+                    }
+                    document.write('<form class="form col-md-12 center-block">'+
+                                        '<p>'+
+                                            '<b>Número total de jogos: </b>'+ est.numTotalJogos +
+                                        '</p>'+
+                                        '<p>'+
+                                            '<b>Número total de pontos acumulados: </b>'+ est.numTotalPontos +
+                                        '</p>'+
+                                        '<p>'+
+                                            '<b>Record pessoal: </b>'+ est.recordPessoal +
+                                        '</p>'+
+                                        '<p>'+
+                                            '<b>Média de pontos por jogo: </b>'+ med.toFixed(2) +
+                                        '</p>'+
+                                        '<p>'+
+                                           ' <b>Percentagem de respostas correctas: </b>'+ perc.toFixed(2) + '%'+
+                                        '</p>'+
+                                        '<p>'+
+                                            '<b>Pontuação do último jogo: </b>'+ est.pontosj +
+                                        '</p>'+
+                                    '</form>');
+                });
+            }
+
+            function constroiTabRec() {
+                $.when(
+                    $.ajax({
+                        url: "/Main/devolveEstatisticaOrdByRecord",
+                        dataType: 'json',
+                        async: false,
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                record.push(data[i]);
+                            }
+                        }
+                    })
+                ).then(function () {
+                    document.write('<table class="zebra" cellpadding="10" style="width:299px; display: inline-block; float: left; padding-left: 70px;">');
+                    document.write('<tr>' +
+                                  '<th><b>Posição</b></th>' +
+                                  '<th><b>Username</b></th>' +
+                                  '<th><b>Record</b></th>' +
+                                  '</tr>');
+                    for (var i = 1; i <= record.length; i++) {
+                        document.write('<tr>' +
+                          '<td>'+i+'</td>' +
+                          '<td>'+record[i-1].username+'</td>' +
+                          '<td>'+record[i-1].recordPessoal+'</td>' +
+                          '</tr>');
+                    }
+                    document.write('</table>');
+                });
+            }
+
+            function constroiTabTotal() {
+                $.when(
+                    $.ajax({
+                        url: "/Main/devolveEstatisticaOrdByTotal",
+                        dataType: 'json',
+                        async: false,
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                totais.push(data[i]);
+                            }
+                        }
+                    })
+                ).then(function () {
+                    document.write('<table class="zebra" cellpadding="10" style="width:659px; display: inline-block; float: left; padding-left: 50px;">');
+                    document.write('<tr>' +
+                                  '<th><b>Posição</b></th>' +
+                                  '<th><b>Username</b></th>' +
+                                  '<th><b>Total de Pontos</b></th>' +
+                                  '<th><b>Total de Jogos</b></th>' +
+                                  '<th><b>Pontos por Jogo</b></th>' +
+                                  '</tr>');
+                    for (var i = 1; i <= totais.length; i++) {
+                        if (totais[i - 1].numTotalJogos == 0) {
+                            med = 0;
+                        }
+                        else {
+                            med = totais[i - 1].numTotalPontos / totais[i - 1].numTotalJogos;
+                        }
+                        document.write('<tr>' +
+                          '<td>' + i + '</td>' +
+                          '<td>' + totais[i - 1].username + '</td>' +
+                          '<td>' + totais[i - 1].numTotalPontos + '</td>' +
+                          '<td>' + totais[i - 1].numTotalJogos + '</td>' +
+                          '<td>' + med + '</td>' +
+                          '</tr>');
+                    }
+                    document.write('</table>');
+                });
+            }
+        </script>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Html.Encode(User.Identity.Name) <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Novo Jogo", "Index", "Main")</li>
+                    <li class="divider"></li>
+                    <li><a href="#openPopup2">Estatística Pessoal</a></li>
+                    <li><a href="#openPopup3">Estatística Global</a></li>
+                    <li>@Html.ActionLink("Alterar password", "AlterarPassword", "User")</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Logout", "LogOut", "User")</li>
+                </ul>
+            </li>
+        </ul>
+        <div id="openPopup2" class="popupDialog">
+                    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="position: relative; margin: 10% auto;">
+                                <div class="modal-header">
+                                    <a href="#close" title="Close" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                                    <h1 class="text-center" style="font-family: 'Montserrat', sans-serif;">Estatística Pessoal</h1>
+                                </div>
+                                <div class="modal-body" style="border-radius: 0 0 4px 4px; background-color: #F5FAFF; height: auto; text-align: left; ">
+                                    <script type="text/javascript">
+                                        estPessoal();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div id="openPopup3" class="popupDialog">
+                    <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true" style=" margin:auto  0 0 -600px;">
+                        <div class="modal-dialog">
+                            <div class="modal-content" style="position: relative; width:1000px; height:600px; margin: 10% auto; left: 17%;">
+                                <div class="modal-header">
+                                    <a href="#close" title="Close" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+                                    <h1 class="text-center" style="font-family: 'Montserrat', sans-serif;">Estatística Global</h1>
+                                </div>
+                                    <div class="modal-body" style="border-radius: 0 0 4px 4px; float:left; height: auto; width: auto; text-align: center;">  
+                                        <script type="text/javascript">
+                                            constroiTabRec();
+                                            constroiTabTotal();
+                                        </script>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Registe-se", "Registration", "User")</li>
+    </ul>
+}
+
+

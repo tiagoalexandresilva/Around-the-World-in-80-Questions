@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VoltaAoMundoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alinhamento">
+    <Key>
+      <PropertyRef Name="idRegiao" />
+      <PropertyRef Name="idRegAlin" />
+    </Key>
+    <Property Name="idRegiao" Type="Int32" Nullable="false" />
+    <Property Name="idRegAlin" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Regiao" Relationship="Self.FK_Alinhamento_Regiao" FromRole="Alinhamento" ToRole="Regiao" />
+  </EntityType>
+  <EntityType Name="EstatisticaPessoal">
+    <Key>
+      <PropertyRef Name="idEstatistica" />
+    </Key>
+    <Property Name="idEstatistica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUtilizador" Type="Int32" Nullable="false" />
+    <Property Name="numTotalJogos" Type="Int32" Nullable="false" />
+    <Property Name="numTotalPontos" Type="Int32" Nullable="false" />
+    <Property Name="recordPessoal" Type="Int32" Nullable="false" />
+    <Property Name="respostasDadas" Type="Int32" Nullable="false" />
+    <Property Name="respostasAcertadas" Type="Int32" Nullable="false" />
+    <Property Name="pontj1" Type="Int32" Nullable="false" />
+    <Property Name="pontj2" Type="Int32" Nullable="false" />
+    <Property Name="pontj3" Type="Int32" Nullable="false" />
+    <Property Name="pontj4" Type="Int32" Nullable="false" />
+    <Property Name="pontj5" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Utilizador" Relationship="Self.FK_EstatisticaPessoal_Utilizador" FromRole="EstatisticaPessoal" ToRole="Utilizador" />
+  </EntityType>
+  <EntityType Name="Fronteira">
+    <Key>
+      <PropertyRef Name="idRegiao" />
+      <PropertyRef Name="idFronteira" />
+    </Key>
+    <Property Name="idRegiao" Type="Int32" Nullable="false" />
+    <Property Name="idFronteira" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Regiao" Relationship="Self.FK_Fronteira_Regiao" FromRole="Fronteira" ToRole="Regiao" />
+  </EntityType>
+  <EntityType Name="Jogo">
+    <Key>
+      <PropertyRef Name="idJogo" />
+    </Key>
+    <Property Name="idJogo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUtilizador" Type="Int32" Nullable="false" />
+    <Property Name="tema" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dificuldade" Type="Int32" Nullable="false" />
+    <Property Name="ajuda1" Type="Boolean" Nullable="false" />
+    <Property Name="ajuda2" Type="Boolean" Nullable="false" />
+    <Property Name="ajuda3" Type="Boolean" Nullable="false" />
+    <Property Name="ajuda4" Type="Boolean" Nullable="false" />
+    <Property Name="pergAtual" Type="Int32" Nullable="false" />
+    <Property Name="regAtual" Type="Int32" Nullable="false" />
+    <Property Name="respostasDadas" Type="Int32" Nullable="false" />
+    <Property Name="respostasAcertadas" Type="Int32" Nullable="false" />
+    <Property Name="numPontos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tema1" Relationship="Self.FK_Jogo_Tema" FromRole="Jogo" ToRole="Tema" />
+    <NavigationProperty Name="Utilizador" Relationship="Self.FK_Jogo_Utilizador" FromRole="Jogo" ToRole="Utilizador" />
+    <NavigationProperty Name="PerguntaJogo" Relationship="Self.FK_PerguntaJogo_Jogo" FromRole="Jogo" ToRole="PerguntaJogo" />
+    <NavigationProperty Name="RegiaoPercorrida" Relationship="Self.FK_RegiaoPercorrida_Jogo" FromRole="Jogo" ToRole="RegiaoPercorrida" />
+  </EntityType>
+  <EntityType Name="Pergunta">
+    <Key>
+      <PropertyRef Name="idPergunta" />
+    </Key>
+    <Property Name="idPergunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idRegiao" Type="Int32" Nullable="false" />
+    <Property Name="nTema" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pergunta1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="resposta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dificuldade" Type="Int32" Nullable="false" />
+    <Property Name="opcao1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="opcao2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="opcao3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="justificacao" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Regiao" Relationship="Self.FK_Pergunta_Regiao" FromRole="Pergunta" ToRole="Regiao" />
+    <NavigationProperty Name="Tema" Relationship="Self.FK_Pergunta_Tema" FromRole="Pergunta" ToRole="Tema" />
+    <NavigationProperty Name="PerguntaJogo" Relationship="Self.FK_PerguntaJogo_Pergunta" FromRole="Pergunta" ToRole="PerguntaJogo" />
+  </EntityType>
+  <EntityType Name="PerguntaJogo">
+    <Key>
+      <PropertyRef Name="idPergunta" />
+      <PropertyRef Name="idJogo" />
+    </Key>
+    <Property Name="idPergunta" Type="Int32" Nullable="false" />
+    <Property Name="idJogo" Type="Int32" Nullable="false" />
+    <Property Name="ordem" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Jogo" Relationship="Self.FK_PerguntaJogo_Jogo" FromRole="PerguntaJogo" ToRole="Jogo" />
+    <NavigationProperty Name="Pergunta" Relationship="Self.FK_PerguntaJogo_Pergunta" FromRole="PerguntaJogo" ToRole="Pergunta" />
+  </EntityType>
+  <EntityType Name="Regiao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomeRegiao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Alinhamento" Relationship="Self.FK_Alinhamento_Regiao" FromRole="Regiao" ToRole="Alinhamento" />
+    <NavigationProperty Name="Fronteira" Relationship="Self.FK_Fronteira_Regiao" FromRole="Regiao" ToRole="Fronteira" />
+    <NavigationProperty Name="Pergunta" Relationship="Self.FK_Pergunta_Regiao" FromRole="Regiao" ToRole="Pergunta" />
+    <NavigationProperty Name="RegiaoPercorrida" Relationship="Self.FK_RegiaoPercorrida_Regiao" FromRole="Regiao" ToRole="RegiaoPercorrida" />
+  </EntityType>
+  <EntityType Name="RegiaoPercorrida">
+    <Key>
+      <PropertyRef Name="idRegiao" />
+      <PropertyRef Name="idJogo" />
+    </Key>
+    <Property Name="idRegiao" Type="Int32" Nullable="false" />
+    <Property Name="idJogo" Type="Int32" Nullable="false" />
+    <Property Name="ordem" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Jogo" Relationship="Self.FK_RegiaoPercorrida_Jogo" FromRole="RegiaoPercorrida" ToRole="Jogo" />
+    <NavigationProperty Name="Regiao" Relationship="Self.FK_RegiaoPercorrida_Regiao" FromRole="RegiaoPercorrida" ToRole="Regiao" />
+  </EntityType>
+  <EntityType Name="Tema">
+    <Key>
+      <PropertyRef Name="nome" />
+    </Key>
+    <Property Name="nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="jogavel" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Jogo" Relationship="Self.FK_Jogo_Tema" FromRole="Tema" ToRole="Jogo" />
+    <NavigationProperty Name="Pergunta" Relationship="Self.FK_Pergunta_Tema" FromRole="Tema" ToRole="Pergunta" />
+  </EntityType>
+  <EntityType Name="Utilizador">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="admin" Type="Boolean" Nullable="false" />
+    <Property Name="pais" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="dataRegisto" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="passwordSalt" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EstatisticaPessoal" Relationship="Self.FK_EstatisticaPessoal_Utilizador" FromRole="Utilizador" ToRole="EstatisticaPessoal" />
+    <NavigationProperty Name="Jogo" Relationship="Self.FK_Jogo_Utilizador" FromRole="Utilizador" ToRole="Jogo" />
+  </EntityType>
+  <Association Name="FK_Alinhamento_Regiao">
+    <End Role="Regiao" Type="Self.Regiao" Multiplicity="1" />
+    <End Role="Alinhamento" Type="Self.Alinhamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regiao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Alinhamento">
+        <PropertyRef Name="idRegiao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstatisticaPessoal_Utilizador">
+    <End Role="Utilizador" Type="Self.Utilizador" Multiplicity="1" />
+    <End Role="EstatisticaPessoal" Type="Self.EstatisticaPessoal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="EstatisticaPessoal">
+        <PropertyRef Name="idUtilizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fronteira_Regiao">
+    <End Role="Regiao" Type="Self.Regiao" Multiplicity="1" />
+    <End Role="Fronteira" Type="Self.Fronteira" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regiao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Fronteira">
+        <PropertyRef Name="idRegiao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogo_Tema">
+    <End Role="Tema" Type="Self.Tema" Multiplicity="1" />
+    <End Role="Jogo" Type="Self.Jogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tema">
+        <PropertyRef Name="nome" />
+      </Principal>
+      <Dependent Role="Jogo">
+        <PropertyRef Name="tema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jogo_Utilizador">
+    <End Role="Utilizador" Type="Self.Utilizador" Multiplicity="1" />
+    <End Role="Jogo" Type="Self.Jogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizador">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Jogo">
+        <PropertyRef Name="idUtilizador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerguntaJogo_Jogo">
+    <End Role="Jogo" Type="Self.Jogo" Multiplicity="1" />
+    <End Role="PerguntaJogo" Type="Self.PerguntaJogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jogo">
+        <PropertyRef Name="idJogo" />
+      </Principal>
+      <Dependent Role="PerguntaJogo">
+        <PropertyRef Name="idJogo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegiaoPercorrida_Jogo">
+    <End Role="Jogo" Type="Self.Jogo" Multiplicity="1" />
+    <End Role="RegiaoPercorrida" Type="Self.RegiaoPercorrida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jogo">
+        <PropertyRef Name="idJogo" />
+      </Principal>
+      <Dependent Role="RegiaoPercorrida">
+        <PropertyRef Name="idJogo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_Regiao">
+    <End Role="Regiao" Type="Self.Regiao" Multiplicity="1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regiao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="idRegiao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pergunta_Tema">
+    <End Role="Tema" Type="Self.Tema" Multiplicity="1" />
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tema">
+        <PropertyRef Name="nome" />
+      </Principal>
+      <Dependent Role="Pergunta">
+        <PropertyRef Name="nTema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerguntaJogo_Pergunta">
+    <End Role="Pergunta" Type="Self.Pergunta" Multiplicity="1" />
+    <End Role="PerguntaJogo" Type="Self.PerguntaJogo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pergunta">
+        <PropertyRef Name="idPergunta" />
+      </Principal>
+      <Dependent Role="PerguntaJogo">
+        <PropertyRef Name="idPergunta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegiaoPercorrida_Regiao">
+    <End Role="Regiao" Type="Self.Regiao" Multiplicity="1" />
+    <End Role="RegiaoPercorrida" Type="Self.RegiaoPercorrida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Regiao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RegiaoPercorrida">
+        <PropertyRef Name="idRegiao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VoltaAoMundoDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alinhamento" EntityType="Self.Alinhamento" />
+    <EntitySet Name="EstatisticaPessoal" EntityType="Self.EstatisticaPessoal" />
+    <EntitySet Name="Fronteira" EntityType="Self.Fronteira" />
+    <EntitySet Name="Jogo" EntityType="Self.Jogo" />
+    <EntitySet Name="Pergunta" EntityType="Self.Pergunta" />
+    <EntitySet Name="PerguntaJogo" EntityType="Self.PerguntaJogo" />
+    <EntitySet Name="Regiao" EntityType="Self.Regiao" />
+    <EntitySet Name="RegiaoPercorrida" EntityType="Self.RegiaoPercorrida" />
+    <EntitySet Name="Tema" EntityType="Self.Tema" />
+    <EntitySet Name="Utilizador" EntityType="Self.Utilizador" />
+    <AssociationSet Name="FK_Alinhamento_Regiao" Association="Self.FK_Alinhamento_Regiao">
+      <End Role="Regiao" EntitySet="Regiao" />
+      <End Role="Alinhamento" EntitySet="Alinhamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstatisticaPessoal_Utilizador" Association="Self.FK_EstatisticaPessoal_Utilizador">
+      <End Role="Utilizador" EntitySet="Utilizador" />
+      <End Role="EstatisticaPessoal" EntitySet="EstatisticaPessoal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fronteira_Regiao" Association="Self.FK_Fronteira_Regiao">
+      <End Role="Regiao" EntitySet="Regiao" />
+      <End Role="Fronteira" EntitySet="Fronteira" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogo_Tema" Association="Self.FK_Jogo_Tema">
+      <End Role="Tema" EntitySet="Tema" />
+      <End Role="Jogo" EntitySet="Jogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jogo_Utilizador" Association="Self.FK_Jogo_Utilizador">
+      <End Role="Utilizador" EntitySet="Utilizador" />
+      <End Role="Jogo" EntitySet="Jogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerguntaJogo_Jogo" Association="Self.FK_PerguntaJogo_Jogo">
+      <End Role="Jogo" EntitySet="Jogo" />
+      <End Role="PerguntaJogo" EntitySet="PerguntaJogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegiaoPercorrida_Jogo" Association="Self.FK_RegiaoPercorrida_Jogo">
+      <End Role="Jogo" EntitySet="Jogo" />
+      <End Role="RegiaoPercorrida" EntitySet="RegiaoPercorrida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_Regiao" Association="Self.FK_Pergunta_Regiao">
+      <End Role="Regiao" EntitySet="Regiao" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pergunta_Tema" Association="Self.FK_Pergunta_Tema">
+      <End Role="Tema" EntitySet="Tema" />
+      <End Role="Pergunta" EntitySet="Pergunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerguntaJogo_Pergunta" Association="Self.FK_PerguntaJogo_Pergunta">
+      <End Role="Pergunta" EntitySet="Pergunta" />
+      <End Role="PerguntaJogo" EntitySet="PerguntaJogo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegiaoPercorrida_Regiao" Association="Self.FK_RegiaoPercorrida_Regiao">
+      <End Role="Regiao" EntitySet="Regiao" />
+      <End Role="RegiaoPercorrida" EntitySet="RegiaoPercorrida" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

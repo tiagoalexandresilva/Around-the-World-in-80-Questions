@@ -1,0 +1,107 @@
+
+@{
+    ViewBag.Title = "FinalJogo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            var url = '@Html.ActionLink("MapaFim", "Main")';
+            var url2 = '@Html.ActionLink("Index", "Main")';
+            var img;
+            var nregs;
+            var regioesPerc = [];
+            var perc = Math.round( Number(@ViewBag.Jogo.respostasAcertadas) / Number(@ViewBag.Jogo.respostasDadas) * 100);
+
+            function getPerc() {
+                return perc;
+            }
+
+            function som() {
+                var applause = $("#aplauso")[0];
+                var booing = $("#boo")[0];
+                var perc2 = getPerc();
+                if (perc2 >= 50) {
+                    applause.play();
+                }
+                else {
+                    booing.play();
+                }
+            };
+
+            function calculaImg() {
+                
+                if (perc == 100) {
+                    img = "/images/super_man.png";
+                }
+                else if (perc >= 85 && perc <= 99) {
+                    img = "/images/victory.png";
+                }
+                else if (perc >= 65 && perc <=84){
+                    img = "/images/happy.png";
+                }
+                else if (perc >= 50 && perc <= 64) {
+                    img = "/images/big_smile.png";
+                }
+                else if (perc >= 35 && perc <= 49) {
+                    img = "/images/shame.png";
+                }
+                else if (perc >= 20 && perc <= 34) {
+                    img = "/images/unhappy.png";
+                }
+                else if (perc >= 0 && perc <= 19) {
+                    img = "/images/cry.png";
+                }
+                return img;
+            }
+
+            function getRegPerc() {
+                $.when(
+                    $.ajax({
+                        url: "/Main/devolveRegioesPerc",
+                        dataType: 'json',
+                        async: false,
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                regioesPerc.push(data[i]);
+                            }
+                        }
+                    })
+                ).then(function () {
+                    nregs = regioesPerc.length;
+                })
+            }
+        </script>
+    </head>
+    <body>
+
+        <audio id="aplauso" preload="auto">
+            <source src="~/sounds/aplauses.mp3" />
+        </audio>
+        <audio id="boo" preload="auto">
+            <source src="~/sounds/booo.mp3" />
+        </audio>
+
+        <h2 style="text-align: center; font-family: 'Gloria Hallelujah', cursive; padding-top: 20px; padding-bottom: 20px;"><b>Terminou a sua viagem!</b></h2>
+        <hr />  
+        <h4 style="text-align: center; font-family: 'Montserrat'">
+            Acertou em @Html.Raw(ViewBag.Jogo.respostasAcertadas) respostas!
+        </h4>
+        <h4 style="text-align: center; font-family: 'Montserrat'">
+            Respondeu a @Html.Raw(ViewBag.Jogo.respostasDadas) perguntas!
+        </h4>
+        <h4 style="text-align: center; font-family: 'Montserrat'">
+            Percorreu <script type="text/javascript">getRegPerc(); document.write(nregs);</script> regiões!
+        </h4>
+        <h4 style="text-align: center; font-family: 'Montserrat'">
+            Acertou em <script type="text/javascript">document.write(getPerc()); som();</script>% das respostas!
+        </h4>
+        <h4 style="text-align: center; font-family: 'Montserrat'">
+            Conseguiu @Html.Raw(ViewBag.Jogo.numPontos) pontos!
+        </h4>
+        <script type="text/javascript">
+            document.write('<img src= "'+calculaImg()+'" alt= "Smiley face" style="margin:0px auto; display:block; padding-top: 35px;" >')
+        </script>
+        <input onclick="window.location.href='/Main/MapaFim'" type="submit" value="Regiões Percorridas" style="font-family: 'Montserrat', sans-serif;  width: 250px; outline: none; position: absolute; left: 28.5%; margin-top: 75px; margin-left: -50px; text-align: center;" class="btn btn-primary btn-lg" />
+        <input onclick="window.location.href = '/Main/Index'" type="submit" value="Novo Jogo" style="font-family: 'Montserrat', sans-serif; width: 250px; outline: none; position: absolute; left: 61%; margin-top: 75px; margin-left: -50px; text-align: center;" class="btn btn-primary btn-lg" />
+    </body>
